@@ -1,0 +1,12 @@
+<!-- <div *ngFor="let product1 of products">
+    <a [routerLink]="['/product', product1.id]">{{ product1.title }}</a>
+</div> -->
+<div *ngFor="let product1 of products">
+    <button type="button" (click)="onClick(product1.id)">{{ product1.title }}</button>
+</div>
+<div *ngIf="product">
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.description }}</p>
+    <p>{{ product.price | currency }}</p>
+</div>
+  

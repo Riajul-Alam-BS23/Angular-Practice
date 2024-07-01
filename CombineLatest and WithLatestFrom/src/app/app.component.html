@@ -1,0 +1,27 @@
+<div [formGroup]="form">
+  <label for="name">Select Name:</label>
+  <select id="name" formControlName="name">
+    <option value="">--Select Name--</option>
+    <option value="Alice">Alice</option>
+    <option value="Bob">Bob</option>
+    <option value="Charlie">Charlie</option>
+  </select>
+
+  <label for="color">Select Color:</label>
+  <select id="color" formControlName="color">
+    <option value="">--Select Color--</option>
+    <option value="Red">Red</option>
+    <option value="Green">Green</option>
+    <option value="Blue">Blue</option>
+  </select>
+</div>
+
+<p>{{ combinedSelection }}</p>
+<li *ngFor="let Selection of combinedSelections">
+  {{ Selection }}
+</li>
+
+
+
+
+

@@ -1,0 +1,4 @@
+<div *ngIf="loading">Loading...</div>
+<ul *ngIf="products">
+  <li *ngFor="let product of products">{{ product.title }}</li>
+</ul>

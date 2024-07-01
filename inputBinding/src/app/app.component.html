@@ -1,0 +1,16 @@
+
+<div style="display: flex; flex-wrap: wrap;flex-direction: row; margin: 20px;">
+  <input [(ngModel)]="firstInputValue" (ngModelChange)="onChange()" type="text">
+  <input [(ngModel)]="firstInputValue" type="text">
+</div>
+
+
+<div style="display: flex; flex-wrap: wrap;flex-direction: row; margin: 20px;">
+<input (keyup)="updateSecondInput($event)" type="text">
+<input #secondInput type="text">
+</div>
+
+<div class="container" style="display: flex; flex-wrap: wrap;flex-direction: row; margin: 20px;">
+  <input #calendar (change)="loadCalender()" type="date">
+  <input #inputField type="text">
+</div>

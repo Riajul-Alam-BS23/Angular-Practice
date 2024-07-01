@@ -1,0 +1,22 @@
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .search-field {
+    width: 100%;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .product-card {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px;
+  }
+  
