@@ -1,0 +1,19 @@
+<h1 style="padding: 20px; text-align: center">Angular Mastery</h1>
+<div>
+  <h1 style="padding: 20px; text-align: center;">{{ currentPage$ | async }}</h1>
+</div>
+<div style="padding: 20px; text-align: center">
+  <app-child [currentPage]="(currentPage$ | async) ?? 0"> </app-child>
+</div>
+
+<ng-container *ngIf="currentPage$ | async as currentPage">
+  <app-child [currentPage]="currentPage"></app-child>
+</ng-container>
+
+
+
+<ng-container *ngIf="data$ | async as data">
+  <div style="padding: 20px; text-align: center;"></div>
+  <h1 style="padding: 20px; text-align: center;">Angular Mastery!</h1>
+  <app-child [currentPage]="data.currentPage"></app-child>
+</ng-container>

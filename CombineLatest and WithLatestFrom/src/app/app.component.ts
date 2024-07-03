@@ -26,7 +26,8 @@ export class AppComponent {
     const color$ = this.form.get('color')!.valueChanges;
 
     combineLatest([name$, color$])
-      .pipe(takeUntil(this.destroy$))
+      .pipe(takeUntil(this.destroy$)
+      )
       .subscribe(([name, color]) => {
         this.combinedSelection = `Name: ${name}, Color: ${color}`;
         this.combinedSelections.push(this.combinedSelection);
@@ -38,3 +39,4 @@ export class AppComponent {
     this.destroy$.complete();
   }
 }
+ 
