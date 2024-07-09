@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .outer-header {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333333;
+  }
+  
+  .language-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  
+  .language-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .inner-box {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  
+  .inner-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555555;
+    margin-bottom: 10px;
+  }
+  
+  .inner-description {
+    color: #777777;
+    margin-bottom: 10px;
+  }
+  
+  .inner-date,
+  .inner-amount {
+    color: #333333;
+    margin-bottom: 5px;
+  }
+  
+  .language-selector {
+    float: right;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+  }
+  
+  .faq-container {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .faq-question h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .faq-answer {
+    padding: 1.5rem;
+    background-color: #f7fafc;
+  }
+  
+  .faq-answer p {
+    margin: 0;
+  }
+
+
+  /* General styling for the card */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+  width: 700px;
+  font-family: Arial, sans-serif;
+  margin-left: 150px;
+}
+
+/* Styling for the outer header */
+.outer-header {
+  background-color: #4CAF50; /* Green background color */
+  color: #fff; /* White text color */
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Styling for the inner box */
+.inner-box {
+  padding: 20px;
+}
+
+/* Styling for the inner header */
+.inner-header {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Styling for the inner description */
+.inner-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #555; /* Slightly darker gray text color */
+}
+
+/* Styling for the inner date */
+.inner-date {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #999; /* Light gray text color */
+}
+
+/* Styling for the inner amount */
+.inner-amount {
+  font-size: 16px;
+  font-weight: bold;
+  color: #4CAF50; /* Green text color to match the outer header */
+}
