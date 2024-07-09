@@ -1,0 +1,9 @@
+{
+    "LANGUAGE": "Language",
+    "ENGLISH": "English",
+    "FRENCH": "French",
+    "PRODUCTS": "Products",
+    "FETCH_ERROR": "Failed to fetch products.",
+    "PRICE": "Price"
+}
+  

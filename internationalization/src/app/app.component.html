@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col">
+      <div class="language-selector">
+        <select class="custom-select" (change)="changeLanguage($event)">
+          <option *ngFor="let lang of languages" [value]="lang" [selected]="lang === translate.currentLang">{{ lang | uppercase }}</option>
+        </select>
+      </div>
+      <div style="margin: 10px;">
+        <h1>{{'Q1' | translate}}</h1>
+      </div>
+      <h1>{{ 'Q2' | translate }}</h1>
+      <div class="row">
+        <div class="col-sm-4 mb-2" *ngFor="let product of products">
+          <div class="card h-100">
+            <img class="card-img-top" [src]="product.image" [alt]="product.title" style="width: 100px; height: 100px; margin: auto;">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.title }}</h5>
+              <p class="card-text">{{ product.description }}</p>
+              <p class="card-text">{{'PRICE' | translate}}: ${{ product.price}}</p>
+              <!-- <p class="card-text">{{ currentDate | date:'short' }}</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+{
+    "LANGUAGE": "Langue",
+    "ENGLISH": "Anglais",
+    "FRENCH": "Français",
+    "PRODUCTS": "Produits",
+    "FETCH_ERROR": "Échec de récupération des produits.",
+    "PRICE":"Prix"
+}

@@ -1,0 +1,32 @@
+h2,
+.shadow-message {
+    color: blue;
+}
+
+h2{
+    color: blue;
+}
+.shadow-message1{
+    border: 2px solid #2196F3;
+    padding: 20px;
+    margin: 20px;
+    background-color: #1f08a1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    font-family: Arial, sans-serif;
+}
+h2,
+.shadow-message {
+    border: 2px solid #2196F3; /* Blue border */
+    padding: 20px; /* Some padding */
+    margin: 20px; /* Some margin */
+    background-color: #e3f2fd; /* Light blue background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: Arial, sans-serif; /* Font */
+    color: #333; /* Text color */
+    color: rgb(25, 0, 255);
+}
+h2{
+    color: #1f08a1;
+}

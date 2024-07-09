@@ -32,16 +32,22 @@ export class CustomTranslateHttpLoader implements TranslateLoader {
     // Fetch the list of files in the language directory
     return this.http.get<any[]>(`${this.baseUrl}contents/${lang}`).pipe(
       // Extract the file names and construct the URLs to fetch their content
-      map(files => files.map(file => file.download_url)),
+      map(files => {
+        console.log('Files => ',files); return files.map(file => file.download_url)}),
       // Fetch the content of each file
       switchMap(urls => {
+        console.log('urls => ',urls);
         const requests = urls.map(url => this.http.get(url));
+        console.log('requests=> ',requests);
         return forkJoin(requests);
       }),
       // Merge the content of all files into a single object
       map(response => {
+        console.log('response=> ',response);
         return response.reduce((acc, res) => {
-          return { ...acc, ...res };
+            console.log('acc=> ',acc);
+            console.log('res=> ',res);
+            return { ...acc, ...res };
         }, {});
       })
     );

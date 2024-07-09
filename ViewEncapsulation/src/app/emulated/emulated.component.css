@@ -1,0 +1,16 @@
+h2,
+.emulated-message {
+    color: green;
+}
+h2,
+.emulated-message {
+    border: 2px solid #4CAF50; /* Green border */
+    padding: 20px; /* Some padding */
+    margin: 20px; /* Some margin */
+    background-color: #f9f9f9; /* Light grey background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: Arial, sans-serif; /* Font */
+    color: #333333; /* Text color */
+    color: green;
+}

@@ -1,0 +1,9 @@
+{
+    "TITLE": "Produits",
+    "PRODUCT": {
+      "NAME": "Nom",
+      "DESCRIPTION": "Description",
+      "PRICE": "Prix: {{price}} USD"
+    }
+  }
+  
