@@ -164,3 +164,83 @@ body {
   font-weight: bold;
   color: #4CAF50; /* Green text color to match the outer header */
 }
+
+
+/* CSS for Search Input Field */
+.form-control {
+  width: 100%;
+  max-width: 400px; /* Adjust width as needed */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #007bff; /* Focus color */
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Focus shadow */
+}
+
+.placeholder {
+  color: grey;
+}
+
+/* Optional: Adjust placeholder color */
+.form-control::placeholder {
+  color: #999;
+}
+
+
+
+
+
+/* current */
+
+/* Navbar styling */
+.navbar {
+  background-color: #f8f9fa; /* Light gray background */
+  border-bottom: 1px solid #e9ecef; /* Light border at the bottom */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #333; /* Dark text color */
+}
+
+.navbar-nav .nav-item {
+  margin-right: 10px; /* Space between nav items */
+}
+
+.nav-link {
+  color: #333; /* Dark text color */
+}
+
+.nav-link:hover {
+  color: #007bff; /* Text color on hover (blue) */
+}
+
+/* Language selector dropdown */
+.language-selector {
+  margin-left: 10px; /* Adjust margin as needed */
+  display: flex; /* Use flexbox for side-by-side alignment */
+  align-items: center; /* Center items vertically */
+}
+
+.custom-select {
+  width: 120px; /* Adjust width as needed */
+  padding: 6px 12px; /* Padding inside the dropdown */
+  font-size: 14px; /* Font size */
+  border: 1px solid #ced4da; /* Border color */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #fff; /* Background color */
+  color: #495057; /* Text color */
+}
+
+.custom-select:focus {
+  border-color: #80bdff; /* Border color on focus */
+  outline: 0; /* Remove outline */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+}

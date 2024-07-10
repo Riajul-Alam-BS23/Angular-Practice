@@ -1,26 +1,6 @@
-// import { HttpClient } from '@angular/common/http';
-// import { TranslateLoader } from '@ngx-translate/core';
-// import { Observable, forkJoin } from 'rxjs';
-// import { map } from 'rxjs/operators';
-
-// export class CustomTranslateHttpLoader implements TranslateLoader {
-//   constructor(private http: HttpClient, private baseUrl: string, private files: string[]) {}
-
-//   public getTranslation(lang: string): Observable<any> {
-//     const requests = this.files.map(file => this.http.get(`${this.baseUrl}${lang}${file}`));
-    
-//     return forkJoin(requests).pipe(
-//       map(response => {
-//         return response.reduce((acc, res) => {
-//           return { ...acc, ...res };
-//         }, {});
-//       })
-//     );
-//   }
-// }
 
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateLoader } from '@ngx-translate/core';
 import { Observable, forkJoin } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
@@ -29,27 +9,39 @@ export class CustomTranslateHttpLoader implements TranslateLoader {
   constructor(private http: HttpClient, private baseUrl: string) {}
 
   public getTranslation(lang: string): Observable<any> {
-    // Fetch the list of files in the language directory
-    return this.http.get<any[]>(`${this.baseUrl}contents/${lang}`).pipe(
-      // Extract the file names and construct the URLs to fetch their content
-      map(files => {
-        console.log('Files => ',files); return files.map(file => file.download_url)}),
-      // Fetch the content of each file
-      switchMap(urls => {
-        console.log('urls => ',urls);
-        const requests = urls.map(url => this.http.get(url));
-        console.log('requests=> ',requests);
-        return forkJoin(requests);
-      }),
-      // Merge the content of all files into a single object
-      map(response => {
-        console.log('response=> ',response);
-        return response.reduce((acc, res) => {
-            console.log('acc=> ',acc);
-            console.log('res=> ',res);
-            return { ...acc, ...res };
-        }, {});
+    const token = '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';
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get<any[]>(`${this.baseUrl}contents/${lang}`,{headers}).pipe(
+      map(files => files.filter(file => file.name !== 'faq.json').map(file => file.download_url)),
+      switchMap(urls => forkJoin(urls.map(url => this.http.get(url)))),
+      map(response => response.reduce((acc, res) => ({ ...acc, ...res }), {}))
+    );
+  }
+
+  public getFaqTranslation(lang: string): Observable<any> {
+    const token = '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';
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get(`${this.baseUrl}contents/${lang}/faq.json`,{headers}).pipe(
+      switchMap((res: any) => {
+        const url = res.download_url;
+        return this.http.get(url);
       })
     );
   }
+  // public getTranslationFaq(lang: string): Observable<any> {
+  //   const token = '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';
+  //   const headers = new HttpHeaders({
+  //     'Authorization': `Bearer ${token}`
+  //   });
+  //   return this.http.get(`${this.baseUrl}contents/${lang}/faq.json`,{headers}).pipe(
+  //     switchMap((res: any) => {
+  //       const url = res.download_url;
+  //       return this.http.get(url);
+  //     })
+  //   );
+  // }
 }

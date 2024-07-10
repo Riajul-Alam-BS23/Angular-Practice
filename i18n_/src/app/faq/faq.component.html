@@ -1,0 +1,17 @@
+<div class="container">
+  <h2 class="title text-center">
+    {{ allData.TITLE }}
+  </h2>
+  <div class="faq-container">
+    <div *ngFor="let faq of allData.FAQS; let i = index" class="faq-item">
+      <div class="faq-question" (click)="toggleFAQ(i)">
+        <h3>{{ faq.QUESTION }}</h3>
+      </div>
+      <div *ngIf="isOpen.has('Q' + i) && isOpen.get('Q' + i)" class="faq-answer">
+        <p>{{ faq.ANSWER }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

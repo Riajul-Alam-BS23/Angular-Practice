@@ -5,7 +5,7 @@
   </select>
 </div> -->
 
-<div class="language-selector">
+<!-- <div class="language-selector">
   <select class="custom-select" (change)="changeLanguage($event)">
     <option
       *ngFor="let lang of languages"
@@ -52,4 +52,72 @@
       {{ 'innerBoxAmount' | translate }}
     </div>
   </div>
-</div>
+</div> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand">App</a>
+    
+    <div class="navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/faq']" routerLinkActive="router-link-active">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="language-selector">
+      <select class="custom-select" (change)="changeLanguage($event)">
+        <option
+          *ngFor="let lang of languages"
+          [value]="lang"
+          [selected]="lang === translate.currentLang"
+        >
+          {{ lang | uppercase }}
+        </option>
+      </select>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+
+
+
+<!-- <div class="language-selector">
+  <select class="custom-select" (change)="changeLanguage($event)">
+    <option
+      *ngFor="let lang of languages"
+      [value]="lang"
+      [selected]="lang === translate.currentLang"
+    >
+      {{ lang | uppercase }}
+    </option>
+  </select>
+</div> -->
+
+
+
+<!-- <div class="container">
+  <h2 class="title text-center">
+    {{ "TITLE" | translate }}
+  </h2>
+  <div class="faq-container">
+    <div *ngFor="let faq of 'FAQS'|translate; let i = index" class="faq-item">
+      <div class="faq-question" (click)="toggleFAQ(i)">
+        <h3>{{ faq.QUESTION | translate }}</h3>
+      </div>
+      <div *ngIf="isOpen.has('Q'+i) && isOpen.get('Q'+i)" class="faq-answer">
+        <p>{{ faq.ANSWER | translate }}</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
