@@ -1,0 +1,36 @@
+
+.container{
+    text-align: center;
+}
+.faq-container {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    height: 400px;
+    overflow: scroll;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .faq-question h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  
+  .faq-answer {
+    padding: 1.5rem;
+    background-color: #f7fafc;
+  }
+  
+  .faq-answer p {
+    margin: 0;
+  }
+

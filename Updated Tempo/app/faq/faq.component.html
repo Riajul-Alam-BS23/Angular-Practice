@@ -1,0 +1,17 @@
+<div class="container">
+  <h2 class="title text-center">
+    {{ 'TITLE' | translate}}
+  </h2>
+  <div class="faq-container">
+    <div *ngFor="let faq of 'FAQS'| translate; let i = index" class="faq-item">
+      <div class="faq-question" (click)="toggleFAQ(i)">
+        <h3>{{ faq.QUESTION |translate}}</h3>
+      </div>
+      <div *ngIf="isOpen.has('Q' + i) && isOpen.get('Q' + i)" class="faq-answer">
+        <p>{{ faq.ANSWER | translate }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
