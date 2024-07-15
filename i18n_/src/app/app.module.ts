@@ -1,4 +1,4 @@
-import { Injector, NgModule } from '@angular/core';
+import { Inject, Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,10 +10,14 @@ import { FormsModule } from '@angular/forms';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { CustomTranslationService } from './core/services/custom-translation.service';
+import { HeaderComponent } from './header/header.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 // AoT requires an exported function for factories
-export function HttpLoaderFactory(http: HttpClient) {
-  return new CustomTranslateHttpLoader(http, 'https://api.github.com/repos/Riajul-Alam-BS23/i18n__/');
+export function HttpLoaderFactory(http: HttpClient,customTranslationService: CustomTranslationService) {
+  // const customTranslationService =Inject(CustomTranslationService);
+  return new CustomTranslateHttpLoader(http, 'https://api.github.com/repos/Riajul-Alam-BS23/i18n/',customTranslationService);
 }
 
 @NgModule({
@@ -21,7 +25,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     FaqComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -32,11 +37,13 @@ export function HttpLoaderFactory(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
+        deps: [HttpClient,CustomTranslationService]
       }
     })
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
